@@ -1,13 +1,15 @@
 import { useState } from 'react';
-import image from './images/logoico.png'
+import espochLogo from './images/logoico.png'
 
 function App() {
   return (
     <div className='App'>
       <div className='espoch-logo'>
-        <img className='espochLogo' src={image} alt='Logo ESPOCH'/>
+        <img className='espochLogo' src={espochLogo} alt='Logo ESPOCH'/>
       </div>
-      <h1>HOLA MUNDO</h1>
+      <div className='cont-calculator'>
+        
+      </div>
     </div>
   );
 }
