@@ -10,35 +10,21 @@ import './styles/Screen.css';
 
 let a = [],
   cont = 0,
-  cont2 = 0,
-  b = ['*', '+', '/', '-'],
-  c = [];
+  b = [];
 
 function App() {
   const [input, setInput] = useState('');
 
   const isOperator = (valor) => {
-    return isNaN(valor) && valor !== '.' && valor !== '=';
-  };
-
-  const listaComprobar = (a, b) => {
-    let cont = 0;
-    a.forEach((element) => {
-      if (element === b) {
-        cont++;
-        console.log(cont);
-      }
-    });
-    return cont >= 1;
+    return isNaN(valor) && valor !== '=';
   };
 
   const agregarInput = (val) => {
     if (cont > 0) {
       if (isOperator(val)) {
-        console.log(c);
         a.pop() === val
           ? alert('Símbolos iguales seguidos')
-          : isOperator(c.pop())
+          : isOperator(b.pop())
           ? alert('Símbolos distintos seguidos')
           : setInput(input + val);
         a.push(val);
@@ -56,8 +42,7 @@ function App() {
         alert('No iniciar con * o /');
       }
     }
-    c = [...a];
-    console.log(c);
+    b = [...a];
   };
 
   const calcular = () => {
